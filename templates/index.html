@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Rechner</title>
+</head>
+<body>
+    <h1>Zahlen addieren</h1>
+
+    <form method="POST">
+        <label>Zahl 1:</label>
+        <input type="number" step="any" name="zahl1" required><br><br>
+
+        <label>Zahl 2:</label>
+        <input type="number" step="any" name="zahl2" required><br><br>
+
+        <button type="submit">Addieren</button>
+    </form>
+
+    {% if result is not none %}
+        <h2>Ergebnis: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
