@@ -15,3 +15,16 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+@app.route("/")
+def home():
+    return render_template("home.html")
+
+@app.route("/rechner", methods=["GET", "POST"])
+def rechner():
+    result = None
+    if request.method == "POST":
+        zahl1 = float(request.form["zahl1"])
+        zahl2 = float(request.form["zahl2"])
+        result = zahl1 + zahl2
+    return render_template("index.html", result=result)
